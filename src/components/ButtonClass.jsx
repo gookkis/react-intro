@@ -7,8 +7,12 @@ class ButtonClass extends Component {
 
     render() {
         return <button style={{ color: this.props.color }}>
-            {this.props.text ? this.props.text : "Default Button"}</button>
+            {this.props.text}</button>
     }
+}
+
+ButtonClass.defaultProps = {
+    text: "Default"
 }
 
 export default ButtonClass
