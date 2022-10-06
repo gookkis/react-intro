@@ -1,23 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import ButtonClass from './components/ButtonClass';
+import ButtonFunction from './components/ButtonFunction';
 
 function App() {
+  const favoriteFood = ["Matcha", "Sate", "Gulai", "Nasi Goreng"]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Makanan</h1>
+      <p>Favorite Food:</p>
+      <ul>
+        {
+          favoriteFood.map((food) => {
+            return <li>{food}</li>
+          })
+        }
+
+      </ul>
+      <div style={{ marginLeft: "20px" }}>
+        <ButtonClass text="I'm button class from props"
+          color="red" /><br />
+        <ButtonFunction text="I'm button function from props"
+          color="blue" /><br />
+        <ButtonClass /><br />
+        <ButtonFunction /><br />
+      </div>
     </div>
   );
 }
