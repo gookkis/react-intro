@@ -4,6 +4,9 @@ import ButtonClass from './components/ButtonClass';
 import ButtonFunction from './components/ButtonFunction';
 
 function App() {
+  const onClickHandler = (song) => {
+    alert(song)
+  }
   const favoriteFood = ["Matcha", "Sate", "Gulai", "Nasi Goreng"]
   return (
     <div>
@@ -21,9 +24,9 @@ function App() {
         <ButtonClass text="I'm button class from props"
           color="red" /><br />
         <ButtonFunction text="I'm button function from props"
-          color="blue" /><br />
+          color="blue" onClickHandler={() => onClickHandler("lalala")} /><br />
         <ButtonClass /><br />
-        <ButtonFunction /><br />
+        <ButtonFunction onClickHandler={() => onClickHandler("lilili")} /><br />
       </div>
     </div>
   );
